@@ -4,6 +4,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { BookingsModule } from './bookings/bookings.module';
+import { ProblemsModule } from './problems/problems.module';
 
 
 @Module({
@@ -24,6 +25,7 @@ import { BookingsModule } from './bookings/bookings.module';
      inject: [ConfigService],
    }),
    BookingsModule,
+   ProblemsModule,
  ],
  controllers: [AppController],
  providers: [AppService],
