@@ -17,9 +17,8 @@ export class AuthController {
     return this.authService.login(req.user);
   }
   
-  @UseGuards(LocalAuthGuard)
   @Post('auth/signup')
   async signup(@Request2() req) {
-    return this.authService.signup(req.user);
+    return this.authService.signup(req.body);
   }
 }
