@@ -6,6 +6,7 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
 import { BookingsModule } from './bookings/bookings.module';
 import { ProblemsModule } from './problems/problems.module';
 import { AuthModule } from './authentication/auth.module';
+import { APP_GUARD } from '@nestjs/core';
 
 
 @Module({

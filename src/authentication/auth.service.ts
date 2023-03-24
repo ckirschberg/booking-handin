@@ -9,6 +9,12 @@ export class AuthService {
     private jwtService: JwtService,
   ) {}
 
+  async signup_tenant(user: any) {
+    return this.usersService.create_tenant(user.username, user.password, user.email);
+  }
+  async signup_board_member(user: any) {
+    // return this.usersService.create(user.username, user.password);
+  }
   async signup(user: any) {
     return this.usersService.create(user.username, user.password);
   }
@@ -19,13 +25,17 @@ export class AuthService {
 
     if (user && user.password === pass) {
       const { password, ...result } = user;
+      console.log("user found removed password", result);
+      
       return result;
     }
     return null;
   }
 
   async login(user: any) {
-    const payload = { username: user.username /*, sub: user.userId*/ };
+    const payload = { 
+      username: user.username, id: user.id, tenantId: user.tenant.id
+    };
     return {
       access_token: this.jwtService.sign(payload),
     };
