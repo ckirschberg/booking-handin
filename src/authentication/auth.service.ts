@@ -13,6 +13,8 @@ export class AuthService {
     return this.usersService.create_tenant(user.username, user.password, user.email);
   }
   async signup_board_member(user: any) {
+
+
     // return this.usersService.create(user.username, user.password);
   }
   async signup(user: any) {
@@ -33,8 +35,10 @@ export class AuthService {
   }
 
   async login(user: any) {
+    console.log("user in login auth.service", user);
+    
     const payload = { 
-      username: user.username, id: user.id, tenantId: user.tenant.id
+      username: user.username, id: user.id, tenantId: user.tenant?.id
     };
     return {
       access_token: this.jwtService.sign(payload),

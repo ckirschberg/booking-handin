@@ -11,11 +11,11 @@ import { UserEntity } from './user';
 
 @Entity()
 export class BoardMember {
-  @PrimaryGeneratedColumn()
-  id: number;
+    @PrimaryGeneratedColumn()
+    id: number;
 
-  @Column()
-  phone: string;
+    @Column()
+    phone: string;
   
     @OneToOne(() => UserEntity)
     @JoinColumn()

@@ -5,7 +5,9 @@ import {
   Request as Request2,
 } from '@nestjs/common';
 import { AuthService } from './auth.service';
+import { JwtAuthGuard } from './jwt-auth.guard';
 import { LocalAuthGuard } from './local-auth.guard';
+import { SuperAdminGuard } from './super-admin.guard';
 
 @Controller()
 export class AuthController {
@@ -30,6 +32,8 @@ export class AuthController {
     
     return this.authService.signup_tenant(req.body);
   }
+
+  @UseGuards(JwtAuthGuard, SuperAdminGuard)
   @Post('auth/signup-boardmember')
   async signup_boardmember(@Request2() req) {
     console.log("body", req.body);
