@@ -1,4 +1,4 @@
-import { Role } from 'src/users/role';
+import { Role } from './../../users/role';
 import { Entity, Column, PrimaryGeneratedColumn, OneToOne } from 'typeorm';
 import { Tenant } from './tenant';
 

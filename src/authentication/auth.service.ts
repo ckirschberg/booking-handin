@@ -13,9 +13,7 @@ export class AuthService {
     return this.usersService.create_tenant(user.username, user.password, user.email);
   }
   async signup_board_member(user: any) {
-
-
-    // return this.usersService.create(user.username, user.password);
+    return this.usersService.create_board_member(user.username, user.password, user.phone);
   }
   async signup(user: any) {
     return this.usersService.create(user.username, user.password);
@@ -23,11 +21,11 @@ export class AuthService {
 
   async validateUser(username: string, pass: string): Promise<any> {
     const user = await this.usersService.findOne(username);
-    console.log("user found", user);
+    // console.log("user found", user);
 
     if (user && user.password === pass) {
       const { password, ...result } = user;
-      console.log("user found removed password", result);
+      // console.log("user found removed password", result);
       
       return result;
     }
@@ -35,7 +33,7 @@ export class AuthService {
   }
 
   async login(user: any) {
-    console.log("user in login auth.service", user);
+    // console.log("user in login auth.service", user);
     
     const payload = { 
       username: user.username, id: user.id, tenantId: user.tenant?.id

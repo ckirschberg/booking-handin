@@ -1,4 +1,4 @@
-import { Tenant } from "src/authentication/entities/tenant";
+import { Tenant } from "./../../authentication/entities/tenant";
 import { Entity, PrimaryGeneratedColumn, Column, ManyToOne } from "typeorm"
 
 @Entity()

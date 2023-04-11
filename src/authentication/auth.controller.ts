@@ -21,14 +21,14 @@ export class AuthController {
   
   @Post('auth/signup')
   async signup(@Request2() req) {
-    console.log("body", req.body);
+    // console.log("body", req.body);
     
     return this.authService.signup(req.body);
   }
 
   @Post('auth/signup-tenant')
   async signup_tenant(@Request2() req) {
-    console.log("body", req.body);
+    // console.log("body", req.body);
     
     return this.authService.signup_tenant(req.body);
   }
@@ -36,7 +36,7 @@ export class AuthController {
   @UseGuards(JwtAuthGuard, SuperAdminGuard)
   @Post('auth/signup-boardmember')
   async signup_boardmember(@Request2() req) {
-    console.log("body", req.body);
+    // console.log("body", req.body);
     
     return this.authService.signup_board_member(req.body);
   }

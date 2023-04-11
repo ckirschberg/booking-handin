@@ -1,4 +1,4 @@
-import { Tenant } from "src/authentication/entities/tenant";
+import { Tenant } from "./../../authentication/entities/tenant";
 
 export class CreateProblemDto {
 //     @Type(() => NationalDto)

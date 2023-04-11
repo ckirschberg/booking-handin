@@ -1,8 +1,8 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { BoardMember } from 'src/authentication/entities/boardmember';
-import { Tenant } from 'src/authentication/entities/tenant';
-import { UserEntity } from 'src/authentication/entities/user';
+import { BoardMember } from './../authentication/entities/boardmember';
+import { Tenant } from './../authentication/entities/tenant';
+import { UserEntity } from './../authentication/entities/user';
 import { UsersService } from './users.service';
 
 @Module({

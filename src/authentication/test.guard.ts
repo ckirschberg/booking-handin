@@ -7,7 +7,7 @@ export class TestGuard implements CanActivate {
     context: ExecutionContext,
   ): boolean | Promise<boolean> | Observable<boolean> {
     const request = context.switchToHttp().getRequest();
-    console.log(request.headers);
+    // console.log(request.headers);
 
     return true;
   }

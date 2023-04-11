@@ -1,6 +1,6 @@
 import { CanActivate, ExecutionContext, Inject, Injectable } from '@nestjs/common'
-import { Role } from 'src/users/role'
-import { UsersService } from 'src/users/users.service'
+import { Role } from './../users/role'
+import { UsersService } from './../users/users.service'
 
 //Used with JWT guard to allow only admin access to endpoint.
 @Injectable()
@@ -13,7 +13,7 @@ export class SuperAdminGuard implements CanActivate {
 
     const user = await this.usersService.findUserById(userId);
 
-    console.log("user in super-admin guard", user);
+    // console.log("user in super-admin guard", user);
 
     return user && user.role === Role.SuperAdmin
   }

@@ -1,6 +1,6 @@
 import { CanActivate, ExecutionContext, Inject, Injectable } from '@nestjs/common'
-import { Role } from 'src/users/role'
-import { UsersService } from 'src/users/users.service'
+import { Role } from './../users/role'
+import { UsersService } from './../users/users.service'
 import { UserEntity } from './entities/user'
 
 //Used with JWT guard to allow only admin access to endpoint.
@@ -14,7 +14,7 @@ export class TenantGuard implements CanActivate {
 
     const user = await this.usersService.findUserById(userId);
 
-    console.log("user in guard", user);
+    // console.log("user in guard", user);
     
     // This returns true if there is a user and
     // the user is an admin
