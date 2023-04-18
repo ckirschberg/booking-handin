@@ -12,6 +12,10 @@ export class Problem {
     @Column()
     description: string;
 
+    @Column({nullable:true})
+    imageUrl: string;
+
+
     @ManyToOne(() => Tenant, (tenant) => tenant.problem)
     tenant: Tenant
 }

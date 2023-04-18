@@ -7,11 +7,20 @@ import { BookingsModule } from './bookings/bookings.module';
 import { ProblemsModule } from './problems/problems.module';
 import { AuthModule } from './authentication/auth.module';
 import { APP_GUARD } from '@nestjs/core';
+import { MulterModule } from '@nestjs/platform-express/multer';
+import { ServeStaticModule } from '@nestjs/serve-static';
+import { join } from 'path';
 
 
 @Module({
  imports: [
    ConfigModule.forRoot({ isGlobal: true }),
+   MulterModule.register({
+    dest: './files',
+  }),
+  ServeStaticModule.forRoot({
+    rootPath: join(__dirname, '..', 'files')
+  }),
    TypeOrmModule.forRootAsync({
      imports: [ConfigModule],
      useFactory: (configService: ConfigService) => ({

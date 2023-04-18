@@ -6,5 +6,5 @@ export class CreateProblemDto {
   tenant: Tenant
 
 
-    constructor(public subject: string, public description: string) {}
+    constructor(public subject: string, public description: string, public imageUrl?: string) {}
 }
