@@ -10,6 +10,7 @@ import { APP_GUARD } from '@nestjs/core';
 import { MulterModule } from '@nestjs/platform-express/multer';
 import { ServeStaticModule } from '@nestjs/serve-static';
 import { join } from 'path';
+import { TodosModule } from './todos/todos.module';
 
 
 @Module({
@@ -37,6 +38,7 @@ import { join } from 'path';
    }),
    BookingsModule,
    ProblemsModule,
+   TodosModule,
    AuthModule,
  ],
  controllers: [AppController],
